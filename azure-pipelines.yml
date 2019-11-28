@@ -39,8 +39,7 @@ steps:
   displayName: 'Publish NuGet package'
   inputs:
     command: push
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
-    feedsToUse: 'config'
-    nugetConfigPath: '$(Build.WorkingDirectory)/NuGet.config'
+    feedsToUse: 'select'
+    publishVstsFeed: 'Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
   condition: succeeded()
